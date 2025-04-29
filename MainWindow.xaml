@@ -1,0 +1,100 @@
+<Window x:Class="WPF_TextBlock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_TextBlock"
+        mc:Ignorable="d"
+        Title="TextBlock控件详解" Height="600" Width="900">
+    <Window.Resources>
+        <Style x:Key="DemoTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,20,0,10"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style x:Key="CodeComment" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Foreground" Value="#707070"/>
+            <Setter Property="Margin" Value="0,5,0,5"/>
+        </Style>
+
+        <!-- 导航菜单样式 -->
+        <Style x:Key="NavButtonStyle" TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="Margin" Value="0,2"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                CornerRadius="4">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#E0E0FF"/>
+                                <Setter Property="BorderBrush" Value="#C0C0FF"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F0F0FF"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#D0D0FF"/>
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 左侧导航区域 -->
+        <Border Background="#F8F9FA" BorderBrush="#E1E2E3" BorderThickness="0,0,1,0">
+            <DockPanel Margin="10">
+                <!-- 标题 -->
+                <TextBlock DockPanel.Dock="Top" Text="TextBlock控件详解"
+                           FontSize="20" FontWeight="Bold" Margin="5,10,5,20"/>
+
+                <!-- 导航菜单 -->
+                <ListBox x:Name="NavListBox" BorderThickness="0" Background="Transparent"
+                         SelectionChanged="NavListBox_SelectionChanged">
+                    <ListBoxItem Style="{StaticResource NavButtonStyle}" Tag="BasicPropertiesPage" IsSelected="True">
+                        <TextBlock Text="基本属性" FontSize="14"/>
+                    </ListBoxItem>
+                    <ListBoxItem Style="{StaticResource NavButtonStyle}" Tag="InlineElementsPage">
+                        <TextBlock Text="内联元素" FontSize="14"/>
+                    </ListBoxItem>
+                    <ListBoxItem Style="{StaticResource NavButtonStyle}" Tag="TextWrappingPage">
+                        <TextBlock Text="文本换行与裁剪" FontSize="14"/>
+                    </ListBoxItem>
+                    <ListBoxItem Style="{StaticResource NavButtonStyle}" Tag="FormattingPage">
+                        <TextBlock Text="文本格式化" FontSize="14"/>
+                    </ListBoxItem>
+                    <ListBoxItem Style="{StaticResource NavButtonStyle}" Tag="AdvancedUsagePage">
+                        <TextBlock Text="高级用法" FontSize="14"/>
+                    </ListBoxItem>
+                </ListBox>
+            </DockPanel>
+        </Border>
+
+        <!-- 右侧内容区域 -->
+        <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden" Loaded="ContentFrame_Loaded">
+            <!-- 确保Frame的内容区域是透明的，以避免重叠问题 -->
+            <Frame.Background>
+                <SolidColorBrush Color="White" Opacity="1.0"/>
+            </Frame.Background>
+        </Frame>
+    </Grid>
+</Window>

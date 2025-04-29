@@ -1,0 +1,248 @@
+<Page x:Class="WPF_TextBlock.Pages.AdvancedUsagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_TextBlock.Pages"
+      mc:Ignorable="d" 
+      Title="高级用法">
+
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <TextBlock Text="TextBlock高级用法" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+            
+            <!-- 特殊布局 -->
+            <GroupBox Header="特殊布局" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="TextBlock可以通过变换实现一些特殊的布局效果" 
+                               TextWrapping="Wrap" Margin="0,5,0,10"/>
+                    
+                    <!-- 垂直文本 -->
+                    <TextBlock Text="1. 垂直文本" FontWeight="Bold" Margin="0,10,0,5"/>
+                    <TextBlock Text="使用LayoutTransform旋转文本：" Margin="10,0,0,5"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="10,0,0,15">
+                            <TextBlock Text="垂直文本" FontSize="14">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="90"/>
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Border>
+                        
+                        <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1" Margin="15,0,0,15">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Width="1" TextWrapping="Wrap" Padding="5">
+                                    使用窄宽度和TextWrapping实现垂直文本
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    
+                    <!-- 文本阴影效果 -->
+                    <TextBlock Text="2. 文本阴影效果" FontWeight="Bold" Margin="0,10,0,5"/>
+                    <TextBlock Text="使用多个TextBlock和Z轴定位实现阴影效果：" 
+                               TextWrapping="Wrap" Margin="10,0,0,5"/>
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="10,0,0,15" Background="White">
+                        <Grid>
+                            <TextBlock Text="阴影文本效果" 
+                                       FontSize="24" 
+                                       FontWeight="Bold" 
+                                       Foreground="#50000000" 
+                                       Margin="2,2,0,0"/>
+                            <TextBlock Text="阴影文本效果" 
+                                       FontSize="24" 
+                                       FontWeight="Bold" 
+                                       Foreground="DarkBlue"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </GroupBox>
+            
+            <!-- 代码自定义 -->
+            <GroupBox Header="代码自定义" Margin="0,20,0,0" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="通过代码可以动态创建和自定义TextBlock" 
+                               TextWrapping="Wrap" Margin="0,5,0,10"/>
+                    
+                    <TextBlock Text="动态创建和操作TextBlock示例：" FontWeight="Bold" Margin="0,10,0,5"/>
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,5,0,15" Background="#F8F8F8">
+                        <TextBlock FontFamily="Consolas" TextWrapping="Wrap">
+                            <Run Text="// 创建TextBlock实例" FontWeight="Bold" Foreground="#0000FF"/>
+                            <LineBreak/>
+                            <Run Text="TextBlock textBlock = new TextBlock();"/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="// 设置基本属性" FontWeight="Bold" Foreground="#0000FF"/>
+                            <LineBreak/>
+                            <Run Text="textBlock.Text = &quot;动态创建的TextBlock&quot;;"/>
+                            <LineBreak/>
+                            <Run Text="textBlock.FontSize = 16;"/>
+                            <LineBreak/>
+                            <Run Text="textBlock.Foreground = new SolidColorBrush(Colors.Blue);"/>
+                            <LineBreak/>
+                            <Run Text="textBlock.TextWrapping = TextWrapping.Wrap;"/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="// 添加到容器中" FontWeight="Bold" Foreground="#0000FF"/>
+                            <LineBreak/>
+                            <Run Text="myPanel.Children.Add(textBlock);"/>
+                        </TextBlock>
+                    </Border>
+                    
+                    <TextBlock Text="运行时修改TextBlock内容示例：" FontWeight="Bold" Margin="0,10,0,5"/>
+                    <TextBlock Text="在下面输入框中输入内容，实时更新TextBlock显示："
+                               TextWrapping="Wrap" Margin="10,0,0,5"/>
+                    
+                    <Grid Margin="10,5,0,15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <TextBox x:Name="InputTextBox" Margin="0,0,0,10" 
+                                 TextChanged="InputTextBox_TextChanged"
+                                 Padding="5"
+                                 Text="请在此处输入文本，查看实时更新效果"/>
+                        
+                        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1" Padding="10">
+                            <TextBlock x:Name="DynamicTextBlock" 
+                                       TextWrapping="Wrap"
+                                       Text="此处显示输入的文本"/>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+            
+            <!-- 性能优化 -->
+            <GroupBox Header="性能优化" Margin="0,20,0,0" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="在处理大量TextBlock时，需要注意性能优化" 
+                               TextWrapping="Wrap" Margin="0,5,0,10"/>
+                    
+                    <TextBlock FontWeight="Bold" Margin="0,10,0,5">性能优化建议：</TextBlock>
+                    <StackPanel Margin="10,0,0,10">
+                        <TextBlock Margin="0,2" TextWrapping="Wrap">
+                            <Run Text="•" FontWeight="Bold"/>
+                            <Run Text="对于静态文本，优先使用TextBlock而非Label"/>
+                        </TextBlock>
+                        <TextBlock Margin="0,2" TextWrapping="Wrap">
+                            <Run Text="•" FontWeight="Bold"/>
+                            <Run Text="避免在TextBlock中放置过多文本内容"/>
+                        </TextBlock>
+                        <TextBlock Margin="0,2" TextWrapping="Wrap">
+                            <Run Text="•" FontWeight="Bold"/>
+                            <Run Text="当需要显示大量文本时，考虑使用RichTextBox或FlowDocument"/>
+                        </TextBlock>
+                        <TextBlock Margin="0,2" TextWrapping="Wrap">
+                            <Run Text="•" FontWeight="Bold"/>
+                            <Run Text="对于固定宽度的TextBlock，总是设置TextWrapping属性"/>
+                        </TextBlock>
+                        <TextBlock Margin="0,2" TextWrapping="Wrap">
+                            <Run Text="•" FontWeight="Bold"/>
+                            <Run Text="使用UI虚拟化处理大量TextBlock"/>
+                        </TextBlock>
+                        <TextBlock Margin="0,2" TextWrapping="Wrap">
+                            <Run Text="•" FontWeight="Bold"/>
+                            <Run Text="在某些情况下可以考虑使用TextBlock缓存"/>
+                        </TextBlock>
+                    </StackPanel>
+                    
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,5,0,15" Background="#FFF4F4">
+                        <TextBlock TextWrapping="Wrap">
+                            <Run Text="性能注意事项：" FontWeight="Bold"/>
+                            <LineBreak/>
+                            创建大量TextBlock时，应该批量操作，避免频繁触发布局更新。例如，使用BeginInit/EndInit方法或者在添加到面板之前先禁用布局更新。
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+            </GroupBox>
+            
+            <!-- TextBlock与其他文本控件比较 -->
+            <GroupBox Header="TextBlock与其他文本控件比较" Margin="0,20,0,0" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="了解TextBlock与其他文本控件的区别有助于选择合适的控件" 
+                               TextWrapping="Wrap" Margin="0,5,0,10"/>
+                    
+                    <Grid Margin="0,5,0,15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- 表头 -->
+                        <Border Grid.Row="0" Grid.Column="0" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="1" Padding="10">
+                            <TextBlock Text="特性" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="1" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="1,1,1,1" Padding="10">
+                            <TextBlock Text="TextBlock" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="2" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="1,1,1,1" Padding="10">
+                            <TextBlock Text="TextBox" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        </Border>
+                        
+                        <!-- 数据行 -->
+                        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Gray" BorderThickness="1,0,1,1" Padding="10">
+                            <StackPanel>
+                                <TextBlock Text="主要用途" Margin="0,5" FontWeight="Bold"/>
+                                <TextBlock Text="可编辑性" Margin="0,5" FontWeight="Bold"/>
+                                <TextBlock Text="资源消耗" Margin="0,5" FontWeight="Bold"/>
+                                <TextBlock Text="默认外观" Margin="0,5" FontWeight="Bold"/>
+                                <TextBlock Text="文本选择" Margin="0,5" FontWeight="Bold"/>
+                                <TextBlock Text="内联格式化" Margin="0,5" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Gray" BorderThickness="0,0,1,1" Padding="10">
+                            <StackPanel>
+                                <TextBlock Text="显示文本" Margin="0,5"/>
+                                <TextBlock Text="只读" Margin="0,5"/>
+                                <TextBlock Text="轻量级" Margin="0,5"/>
+                                <TextBlock Text="无边框" Margin="0,5"/>
+                                <TextBlock Text="不支持（默认情况）" Margin="0,5"/>
+                                <TextBlock Text="支持多种内联元素" Margin="0,5"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <Border Grid.Row="1" Grid.Column="2" BorderBrush="Gray" BorderThickness="0,0,1,1" Padding="10">
+                            <StackPanel>
+                                <TextBlock Text="编辑文本" Margin="0,5"/>
+                                <TextBlock Text="可编辑" Margin="0,5"/>
+                                <TextBlock Text="较重" Margin="0,5"/>
+                                <TextBlock Text="有边框" Margin="0,5"/>
+                                <TextBlock Text="支持" Margin="0,5"/>
+                                <TextBlock Text="不支持（除非使用RichTextBox）" Margin="0,5"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+            
+            <!-- 动态创建的TextBlock按钮演示 -->
+            <GroupBox Header="动态创建TextBlock示例" Margin="0,20,0,0" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="点击按钮动态创建TextBlock：" Margin="0,5,0,10"/>
+                    <Button x:Name="CreateTextBlockBtn" Content="创建TextBlock" 
+                            Padding="10,5" 
+                            Click="CreateTextBlockBtn_Click"
+                            HorizontalAlignment="Left"/>
+                    
+                    <Border BorderBrush="Gray" BorderThickness="1" MinHeight="100" Margin="0,10,0,0" Padding="10">
+                        <StackPanel x:Name="DynamicTextBlockContainer">
+                            <TextBlock Text="动态创建的TextBlock将显示在这里" Foreground="Gray" FontStyle="Italic"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</Page> 
