@@ -12,6 +12,7 @@ namespace WPF_TextBlock
     /// </summary>
     public static class PageDisposer
     {
+
         /// <summary>
         /// 尝试释放页面及其所有子控件的资源
         /// </summary>
