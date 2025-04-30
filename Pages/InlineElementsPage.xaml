@@ -1,184 +1,264 @@
-<Page x:Class="WPF_TextBlock.Pages.InlineElementsPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WPF_TextBlock.Pages"
-      mc:Ignorable="d" 
-      Title="内联元素">
+<Page
+    x:Class="WPF_TextBlock.Pages.InlineElementsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_TextBlock.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="内联元素"
+    Background="AliceBlue"
+    mc:Ignorable="d">
 
     <ScrollViewer>
         <StackPanel Margin="20">
-            <TextBlock Text="TextBlock的内联元素" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
-            
-            <!-- Run元素 -->
-            <GroupBox Header="Run元素" Padding="10">
+            <TextBlock
+                Margin="0,0,0,20"
+                FontSize="24"
+                FontWeight="Bold"
+                Text="TextBlock的内联元素" />
+
+            <!--  Run元素  -->
+            <GroupBox Padding="10" Header="Run元素">
                 <StackPanel>
-                    <TextBlock Text="Run元素是TextBlock中最基本的内联元素，用于格式化文本的一部分" 
-                               TextWrapping="Wrap" Margin="0,5"/>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,10">
+                    <TextBlock
+                        Margin="0,5"
+                        Text="Run元素是TextBlock中最基本的内联元素，用于格式化文本的一部分"
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Margin="0,10"
+                        Padding="10"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
                         <TextBlock TextWrapping="Wrap">
-                            <Run Text="这是默认格式的文本"/>
-                            <LineBreak/>
-                            <Run Text="这是" FontWeight="Bold"/>
-                            <Run Text="不同格式" Foreground="Red" FontStyle="Italic"/>
-                            <Run Text="的Run元素" FontSize="16"/>
+                            <Run Text="这是默认格式的文本" />
+                            <LineBreak />
+                            <Run FontWeight="Bold" Text="这是" />
+                            <Run
+                                FontStyle="Italic"
+                                Foreground="Red"
+                                Text="不同格式" />
+                            <Run FontSize="16" Text="的Run元素" />
                         </TextBlock>
                     </Border>
-                    
+
                     <TextBlock Margin="0,10" TextWrapping="Wrap">
-                        <Run Text="Run元素可以独立设置多种属性，包括：" FontWeight="Bold"/>
-                        <LineBreak/>
-                        <Run Text="• FontFamily：字体族" FontFamily="Consolas"/>
-                        <LineBreak/>
-                        <Run Text="• FontSize：字体大小" FontSize="14"/>
-                        <LineBreak/>
-                        <Run Text="• FontWeight：字体粗细" FontWeight="Bold"/>
-                        <LineBreak/>
-                        <Run Text="• FontStyle：字体样式" FontStyle="Italic"/>
-                        <LineBreak/>
-                        <Run Text="• Foreground：前景色" Foreground="Blue"/>
-                        <LineBreak/>
-                        <Run Text="• TextDecorations：文本装饰" TextDecorations="Underline"/>
+                        <Run FontWeight="Bold" Text="Run元素可以独立设置多种属性，包括：" />
+                        <LineBreak />
+                        <Run FontFamily="Consolas" Text="• FontFamily：字体族" />
+                        <LineBreak />
+                        <Run FontSize="14" Text="• FontSize：字体大小" />
+                        <LineBreak />
+                        <Run FontWeight="Bold" Text="• FontWeight：字体粗细" />
+                        <LineBreak />
+                        <Run FontStyle="Italic" Text="• FontStyle：字体样式" />
+                        <LineBreak />
+                        <Run Foreground="Blue" Text="• Foreground：前景色" />
+                        <LineBreak />
+                        <Run Text="• TextDecorations：文本装饰" TextDecorations="Underline" />
                     </TextBlock>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- Bold, Italic, Underline元素 -->
-            <GroupBox Header="Bold, Italic, Underline元素" Margin="0,20,0,0" Padding="10">
+
+            <!--  Bold, Italic, Underline元素  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="Bold, Italic, Underline元素">
                 <StackPanel>
-                    <TextBlock Text="这些元素是Run的特殊形式，用于快速实现常见的文本格式" 
-                               TextWrapping="Wrap" Margin="0,5"/>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,10">
+                    <TextBlock
+                        Margin="0,5"
+                        Text="这些元素是Run的特殊形式，用于快速实现常见的文本格式"
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Margin="0,10"
+                        Padding="10"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
                         <TextBlock TextWrapping="Wrap">
-                            普通文本，<Bold>粗体文本</Bold>，<Italic>斜体文本</Italic>，<Underline>下划线文本</Underline>
-                            <LineBreak/>
-                            也可以<Bold><Italic>组合使用</Italic></Bold>多种格式元素
-                        </TextBlock>
+                            普通文本，<Bold>粗体文本</Bold>
+                            ，<Italic>斜体文本</Italic>
+                            ，<Underline>下划线文本</Underline>
+                            <LineBreak />
+                            也可以<Bold>
+                                <Italic>组合使用</Italic>
+                            </Bold>
+                            多种格式元素</TextBlock>
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- Hyperlink元素 -->
-            <GroupBox Header="Hyperlink元素" Margin="0,20,0,0" Padding="10">
+
+            <!--  Hyperlink元素  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="Hyperlink元素">
                 <StackPanel>
-                    <TextBlock Text="Hyperlink元素用于创建可点击的链接" 
-                               TextWrapping="Wrap" Margin="0,5"/>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,10">
+                    <TextBlock
+                        Margin="0,5"
+                        Text="Hyperlink元素用于创建可点击的链接"
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Margin="0,10"
+                        Padding="10"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
                         <TextBlock TextWrapping="Wrap">
-                            <Run Text="这是一个超链接示例："/>
-                            <LineBreak/>
-                            <Hyperlink NavigateUri="https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/" 
-                                       RequestNavigate="Hyperlink_RequestNavigate">
+                            <Run Text="这是一个超链接示例：" />
+                            <LineBreak />
+                            <Hyperlink NavigateUri="https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/" RequestNavigate="Hyperlink_RequestNavigate">
                                 WPF官方文档
                             </Hyperlink>
-                            <LineBreak/>
-                            <Run Text="Hyperlink还可以设置样式："/>
-                            <LineBreak/>
-                            <Hyperlink NavigateUri="https://github.com" 
-                                       RequestNavigate="Hyperlink_RequestNavigate"
-                                       Foreground="Green" 
-                                       FontWeight="Bold">
+                            <LineBreak />
+                            <Run Text="Hyperlink还可以设置样式：" />
+                            <LineBreak />
+                            <Hyperlink
+                                FontWeight="Bold"
+                                Foreground="Green"
+                                NavigateUri="https://github.com"
+                                RequestNavigate="Hyperlink_RequestNavigate">
                                 自定义样式的超链接
                             </Hyperlink>
                         </TextBlock>
                     </Border>
-                    
+
                     <TextBlock Margin="0,10" TextWrapping="Wrap">
-                        <Run Text="注意：需要在代码中处理RequestNavigate事件才能实现点击链接的功能" FontWeight="Bold"/>
+                        <Run FontWeight="Bold" Text="注意：需要在代码中处理RequestNavigate事件才能实现点击链接的功能" />
                     </TextBlock>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- LineBreak元素 -->
-            <GroupBox Header="LineBreak元素" Margin="0,20,0,0" Padding="10">
+
+            <!--  LineBreak元素  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="LineBreak元素">
                 <StackPanel>
-                    <TextBlock Text="LineBreak元素用于在文本中插入换行" 
-                               TextWrapping="Wrap" Margin="0,5"/>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,10">
+                    <TextBlock
+                        Margin="0,5"
+                        Text="LineBreak元素用于在文本中插入换行"
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Margin="0,10"
+                        Padding="10"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
                         <TextBlock>
-                            这是第一行文本<LineBreak/>
-                            这是第二行文本<LineBreak/>
-                            这是第三行文本
-                        </TextBlock>
+                            这是第一行文本<LineBreak />
+                            这是第二行文本<LineBreak />
+                            这是第三行文本</TextBlock>
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- Span元素 -->
-            <GroupBox Header="Span元素" Margin="0,20,0,0" Padding="10">
+
+            <!--  Span元素  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="Span元素">
                 <StackPanel>
-                    <TextBlock Text="Span元素可以包含其他内联元素，用于对多个内联元素进行分组" 
-                               TextWrapping="Wrap" Margin="0,5"/>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,10">
+                    <TextBlock
+                        Margin="0,5"
+                        Text="Span元素可以包含其他内联元素，用于对多个内联元素进行分组"
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Margin="0,10"
+                        Padding="10"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
                         <TextBlock TextWrapping="Wrap">
-                            <Run Text="以下是Span元素示例："/>
-                            <LineBreak/>
+                            <Run Text="以下是Span元素示例：" />
+                            <LineBreak />
                             <Span Foreground="Blue">
-                                这个Span内的所有内容都是蓝色的，
-                                <Bold>包括这个粗体文本</Bold>和
-                                <Italic>这个斜体文本</Italic>
+                                这个Span内的所有内容都是蓝色的，<Bold>包括这个粗体文本</Bold>
+                                和<Italic>这个斜体文本</Italic>
                             </Span>
                         </TextBlock>
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- InlineUIContainer元素 -->
-            <GroupBox Header="InlineUIContainer元素" Margin="0,20,0,0" Padding="10">
+
+            <!--  InlineUIContainer元素  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="InlineUIContainer元素">
                 <StackPanel>
-                    <TextBlock Text="InlineUIContainer元素允许在文本流中嵌入任何UIElement控件" 
-                               TextWrapping="Wrap" Margin="0,5"/>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,10">
+                    <TextBlock
+                        Margin="0,5"
+                        Text="InlineUIContainer元素允许在文本流中嵌入任何UIElement控件"
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Margin="0,10"
+                        Padding="10"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
                         <TextBlock TextWrapping="Wrap">
-                            <Run Text="文本中可以嵌入按钮："/>
+                            <Run Text="文本中可以嵌入按钮：" />
                             <InlineUIContainer>
-                                <Button Content="点击我" Margin="5,0" Padding="5,2"/>
+                                <Button
+                                    Margin="5,0"
+                                    Padding="5,2"
+                                    Content="点击我" />
                             </InlineUIContainer>
-                            <Run Text="或者其他控件，如："/>
+                            <Run Text="或者其他控件，如：" />
                             <InlineUIContainer>
-                                <CheckBox Content="复选框" Margin="5,0"/>
+                                <CheckBox Margin="5,0" Content="复选框" />
                             </InlineUIContainer>
-                            <LineBreak/>
-                            <Run Text="甚至可以嵌入图像："/>
+                            <LineBreak />
+                            <Run Text="甚至可以嵌入图像：" />
                             <InlineUIContainer>
-                                <Rectangle Width="16" Height="16" Fill="Red" Margin="5,0"/>
+                                <Rectangle
+                                    Width="16"
+                                    Height="16"
+                                    Margin="5,0"
+                                    Fill="Red" />
                             </InlineUIContainer>
                         </TextBlock>
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- 组合使用多种内联元素 -->
-            <GroupBox Header="组合使用多种内联元素" Margin="0,20,0,0" Padding="10">
+
+            <!--  组合使用多种内联元素  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="组合使用多种内联元素">
                 <StackPanel>
-                    <TextBlock Text="内联元素可以组合使用，创建复杂的文本格式" 
-                               TextWrapping="Wrap" Margin="0,5"/>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,10">
+                    <TextBlock
+                        Margin="0,5"
+                        Text="内联元素可以组合使用，创建复杂的文本格式"
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Margin="0,10"
+                        Padding="10"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
                         <TextBlock TextWrapping="Wrap">
                             <Bold>WPF TextBlock内联元素</Bold>
-                            <LineBreak/>
-                            <Run Text="TextBlock是" FontSize="14"/>
-                            <Run Text="WPF中" Foreground="Blue" FontWeight="Bold"/>
-                            <Run Text="最常用的文本控件之一。" FontStyle="Italic"/>
-                            <LineBreak/>
+                            <LineBreak />
+                            <Run FontSize="14" Text="TextBlock是" />
+                            <Run
+                                FontWeight="Bold"
+                                Foreground="Blue"
+                                Text="WPF中" />
+                            <Run FontStyle="Italic" Text="最常用的文本控件之一。" />
+                            <LineBreak />
                             <Span TextDecorations="Underline">
-                                <Run Text="它支持"/>
+                                <Run Text="它支持" />
                                 <Bold>多种文本格式</Bold>
-                                <Run Text="和"/>
-                                <Run Text="排版功能" Foreground="Green"/>
+                                <Run Text="和" />
+                                <Run Foreground="Green" Text="排版功能" />
                             </Span>
-                            <LineBreak/>
-                            <Run Text="更多信息请参考："/>
-                            <Hyperlink NavigateUri="https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.controls.textblock" 
-                                       RequestNavigate="Hyperlink_RequestNavigate">
+                            <LineBreak />
+                            <Run Text="更多信息请参考：" />
+                            <Hyperlink NavigateUri="https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.controls.textblock" RequestNavigate="Hyperlink_RequestNavigate">
                                 TextBlock官方文档
                             </Hyperlink>
                         </TextBlock>

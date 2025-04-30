@@ -1,142 +1,258 @@
-<Page x:Class="WPF_TextBlock.Pages.TextWrappingPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WPF_TextBlock.Pages"
-      mc:Ignorable="d" 
-      Title="文本换行与裁剪">
+<Page
+    x:Class="WPF_TextBlock.Pages.TextWrappingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_TextBlock.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="文本换行与裁剪"
+    Background="AliceBlue"
+    mc:Ignorable="d">
 
     <ScrollViewer>
         <StackPanel Margin="20">
-            <TextBlock Text="TextBlock文本换行与裁剪" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
-            
-            <!-- TextWrapping属性 -->
-            <GroupBox Header="TextWrapping属性" Padding="10">
+            <TextBlock
+                Margin="0,0,0,20"
+                FontSize="24"
+                FontWeight="Bold"
+                Text="TextBlock文本换行与裁剪" />
+
+            <!--  TextWrapping属性  -->
+            <GroupBox Padding="10" Header="TextWrapping属性">
                 <StackPanel>
-                    <TextBlock Text="TextWrapping属性控制文本超出控件宽度时的换行行为" 
-                               TextWrapping="Wrap" Margin="0,5,0,10"/>
-                    
-                    <TextBlock Text="1. NoWrap (默认值)" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <TextBlock Text="设置为NoWrap时，文本不会自动换行，超出部分将被截断或隐藏"
-                               TextWrapping="Wrap" Margin="10,0,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock Text="这是一段很长的文本，设置TextWrapping='NoWrap'后，文本将不会自动换行，超出控件宽度的部分会被截断或隐藏" 
-                                   TextWrapping="NoWrap"
-                                   Padding="5"/>
+                    <TextBlock
+                        Margin="0,5,0,10"
+                        Text="TextWrapping属性控制文本超出控件宽度时的换行行为"
+                        TextWrapping="Wrap" />
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="1. NoWrap (默认值)" />
+                    <TextBlock
+                        Margin="10,0,0,5"
+                        Text="设置为NoWrap时，文本不会自动换行，超出部分将被截断或隐藏"
+                        TextWrapping="Wrap" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Padding="5"
+                            Text="这是一段很长的文本，设置TextWrapping='NoWrap'后，文本将不会自动换行，超出控件宽度的部分会被截断或隐藏"
+                            TextWrapping="NoWrap" />
                     </Border>
-                    
-                    <TextBlock Text="2. Wrap" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <TextBlock Text="设置为Wrap时，文本会在单词边界自动换行，确保所有内容都可见"
-                               TextWrapping="Wrap" Margin="10,0,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock Text="这是一段很长的文本，设置TextWrapping='Wrap'后，文本会自动在单词边界换行，确保所有内容都可见，这对显示长段落非常有用" 
-                                   TextWrapping="Wrap"
-                                   Padding="5"/>
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="2. Wrap" />
+                    <TextBlock
+                        Margin="10,0,0,5"
+                        Text="设置为Wrap时，文本会在单词边界自动换行，确保所有内容都可见"
+                        TextWrapping="Wrap" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Padding="5"
+                            Text="这是一段很长的文本，设置TextWrapping='Wrap'后，文本会自动在单词边界换行，确保所有内容都可见，这对显示长段落非常有用"
+                            TextWrapping="Wrap" />
                     </Border>
-                    
-                    <TextBlock Text="3. WrapWithOverflow" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <TextBlock Text="设置为WrapWithOverflow时，文本会尽可能在单词边界换行，但是如果单词太长超过控件宽度，会在字符处换行"
-                               TextWrapping="Wrap" Margin="10,0,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock Text="这是一段很长的文本，包含一些非常非常非常非常非常非常非常非常非常非常长的单词，设置TextWrapping='WrapWithOverflow'后，这些长单词会在字符处断开" 
-                                   TextWrapping="WrapWithOverflow"
-                                   Padding="5"/>
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="3. WrapWithOverflow" />
+                    <TextBlock
+                        Margin="10,0,0,5"
+                        Text="设置为WrapWithOverflow时，文本会尽可能在单词边界换行，但是如果单词太长超过控件宽度，会在字符处换行"
+                        TextWrapping="Wrap" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Padding="5"
+                            Text="这是一段很长的文本，包含一些非常非常非常非常非常非常非常非常非常非常长的单词，设置TextWrapping='WrapWithOverflow'后，这些长单词会在字符处断开"
+                            TextWrapping="WrapWithOverflow" />
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- TextTrimming属性 -->
-            <GroupBox Header="TextTrimming属性" Margin="0,20,0,0" Padding="10">
+
+            <!--  TextTrimming属性  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="TextTrimming属性">
                 <StackPanel>
-                    <TextBlock Text="TextTrimming属性控制当文本超出控件宽度时的裁剪方式" 
-                               TextWrapping="Wrap" Margin="0,5,0,10"/>
-                    
-                    <TextBlock Text="1. None (默认值)" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <TextBlock Text="设置为None时，文本不会特殊处理，超出部分会被截断"
-                               TextWrapping="Wrap" Margin="10,0,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock Text="这是一段很长的文本，设置TextTrimming='None'后，超出部分会被简单截断，没有特殊处理" 
-                                   TextWrapping="NoWrap"
-                                   TextTrimming="None"
-                                   Padding="5"/>
+                    <TextBlock
+                        Margin="0,5,0,10"
+                        Text="TextTrimming属性控制当文本超出控件宽度时的裁剪方式"
+                        TextWrapping="Wrap" />
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="1. None (默认值)" />
+                    <TextBlock
+                        Margin="10,0,0,5"
+                        Text="设置为None时，文本不会特殊处理，超出部分会被截断"
+                        TextWrapping="Wrap" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Padding="5"
+                            Text="这是一段很长的文本，设置TextTrimming='None'后，超出部分会被简单截断，没有特殊处理"
+                            TextTrimming="None"
+                            TextWrapping="NoWrap" />
                     </Border>
-                    
-                    <TextBlock Text="2. CharacterEllipsis" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <TextBlock Text="设置为CharacterEllipsis时，超出部分会被省略号(...)替代，在字符级别进行裁剪"
-                               TextWrapping="Wrap" Margin="10,0,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock Text="这是一段很长的文本，设置TextTrimming='CharacterEllipsis'后，超出部分会被省略号替代，在任意字符处裁剪" 
-                                   TextWrapping="NoWrap"
-                                   TextTrimming="CharacterEllipsis"
-                                   Padding="5"/>
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="2. CharacterEllipsis" />
+                    <TextBlock
+                        Margin="10,0,0,5"
+                        Text="设置为CharacterEllipsis时，超出部分会被省略号(...)替代，在字符级别进行裁剪"
+                        TextWrapping="Wrap" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Padding="5"
+                            Text="这是一段很长的文本，设置TextTrimming='CharacterEllipsis'后，超出部分会被省略号替代，在任意字符处裁剪"
+                            TextTrimming="CharacterEllipsis"
+                            TextWrapping="NoWrap" />
                     </Border>
-                    
-                    <TextBlock Text="3. WordEllipsis" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <TextBlock Text="设置为WordEllipsis时，超出部分会被省略号(...)替代，但会尽量在单词边界处进行裁剪"
-                               TextWrapping="Wrap" Margin="10,0,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock Text="这是一段很长的文本，设置TextTrimming='WordEllipsis'后，超出部分会被省略号替代，会尽量在单词边界处裁剪" 
-                                   TextWrapping="NoWrap"
-                                   TextTrimming="WordEllipsis"
-                                   Padding="5"/>
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="3. WordEllipsis" />
+                    <TextBlock
+                        Margin="10,0,0,5"
+                        Text="设置为WordEllipsis时，超出部分会被省略号(...)替代，但会尽量在单词边界处进行裁剪"
+                        TextWrapping="Wrap" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Padding="5"
+                            Text="这是一段很长的文本，设置TextTrimming='WordEllipsis'后，超出部分会被省略号替代，会尽量在单词边界处裁剪"
+                            TextTrimming="WordEllipsis"
+                            TextWrapping="NoWrap" />
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- 文本换行与裁剪的组合使用 -->
-            <GroupBox Header="文本换行与裁剪的组合使用" Margin="0,20,0,0" Padding="10">
+
+            <!--  文本换行与裁剪的组合使用  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="文本换行与裁剪的组合使用">
                 <StackPanel>
-                    <TextBlock Text="TextWrapping和TextTrimming属性可以组合使用，满足不同场景需求" 
-                               TextWrapping="Wrap" Margin="0,5,0,10"/>
-                    
-                    <TextBlock Text="1. 多行显示固定高度，末尾添加省略号" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock TextWrapping="Wrap" Height="60" TextTrimming="WordEllipsis" Padding="5">
+                    <TextBlock
+                        Margin="0,5,0,10"
+                        Text="TextWrapping和TextTrimming属性可以组合使用，满足不同场景需求"
+                        TextWrapping="Wrap" />
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="1. 多行显示固定高度，末尾添加省略号" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Height="60"
+                            Padding="5"
+                            TextTrimming="WordEllipsis"
+                            TextWrapping="Wrap">
                             这是一段很长的文本内容，通常用于演示文本的换行和裁剪效果。在这个例子中，我们设置了TextWrapping="Wrap"使文本可以自动换行，同时设置了固定高度和TextTrimming="WordEllipsis"，这样当文本内容超出控件高度时，会在末尾显示省略号。这种组合方式常用于显示文章摘要或长内容的预览。
                         </TextBlock>
                     </Border>
-                    
-                    <TextBlock Text="2. 长标题单行显示，超出部分用省略号代替" FontWeight="Bold" Margin="0,10,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" Margin="10,0,0,15">
-                        <TextBlock Text="这是一个非常长的标题或产品名称，通常情况下我们希望它在单行内显示，超出部分使用省略号代替" 
-                                   TextWrapping="NoWrap"
-                                   TextTrimming="CharacterEllipsis"
-                                   Padding="5"/>
+
+                    <TextBlock
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="2. 长标题单行显示，超出部分用省略号代替" />
+                    <Border
+                        Width="300"
+                        Margin="10,0,0,15"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Padding="5"
+                            Text="这是一个非常长的标题或产品名称，通常情况下我们希望它在单行内显示，超出部分使用省略号代替"
+                            TextTrimming="CharacterEllipsis"
+                            TextWrapping="NoWrap" />
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- 自适应文本大小 -->
-            <GroupBox Header="自适应文本布局的实践" Margin="0,20,0,0" Padding="10">
+
+            <!--  自适应文本大小  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="自适应文本布局的实践">
                 <StackPanel>
-                    <TextBlock Text="在实际应用中，为了适应不同尺寸的设备和窗口，我们需要合理使用文本换行和裁剪属性" 
-                               TextWrapping="Wrap" Margin="0,5,0,10"/>
-                    
+                    <TextBlock
+                        Margin="0,5,0,10"
+                        Text="在实际应用中，为了适应不同尺寸的设备和窗口，我们需要合理使用文本换行和裁剪属性"
+                        TextWrapping="Wrap" />
+
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <!-- 响应式布局示例 -->
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,5,0" Padding="10">
+
+                        <!--  响应式布局示例  -->
+                        <Border
+                            Margin="0,0,5,0"
+                            Padding="10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
                             <StackPanel>
-                                <TextBlock Text="响应式标题" FontWeight="Bold" TextWrapping="Wrap"/>
-                                <TextBlock Text="这是一段会根据容器宽度自动调整的文本内容，当容器变窄时，文本会自动换行" 
-                                           TextWrapping="Wrap"
-                                           Margin="0,5,0,0"/>
+                                <TextBlock
+                                    FontWeight="Bold"
+                                    Text="响应式标题"
+                                    TextWrapping="Wrap" />
+                                <TextBlock
+                                    Margin="0,5,0,0"
+                                    Text="这是一段会根据容器宽度自动调整的文本内容，当容器变窄时，文本会自动换行"
+                                    TextWrapping="Wrap" />
                             </StackPanel>
                         </Border>
-                        
-                        <!-- 固定宽度标题示例 -->
-                        <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1" Margin="5,0,0,0" Padding="10">
+
+                        <!--  固定宽度标题示例  -->
+                        <Border
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            Padding="10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
                             <StackPanel>
-                                <TextBlock Text="固定宽度标题" FontWeight="Bold"/>
-                                <TextBlock Text="这是一段固定宽度的文本，超出部分会被省略号替换" 
-                                           Width="150"
-                                           TextTrimming="CharacterEllipsis"
-                                           Margin="0,5,0,0"/>
+                                <TextBlock FontWeight="Bold" Text="固定宽度标题" />
+                                <TextBlock
+                                    Width="150"
+                                    Margin="0,5,0,0"
+                                    Text="这是一段固定宽度的文本，超出部分会被省略号替换"
+                                    TextTrimming="CharacterEllipsis" />
                             </StackPanel>
                         </Border>
                     </Grid>

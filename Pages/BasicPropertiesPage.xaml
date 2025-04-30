@@ -1,168 +1,373 @@
-<Page x:Class="WPF_TextBlock.Pages.BasicPropertiesPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WPF_TextBlock.Pages"
-      mc:Ignorable="d" 
-      Title="TextBlock基本属性演示">
+<Page
+    x:Class="WPF_TextBlock.Pages.BasicPropertiesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_TextBlock.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="TextBlock基本属性演示"
+    Background="AliceBlue"
+    mc:Ignorable="d">
 
     <ScrollViewer>
         <StackPanel Margin="20">
-            <TextBlock Text="TextBlock基本属性" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
-            
-            <!-- 基本文本显示 -->
-            <GroupBox Header="基本文本显示" Padding="10">
+            <TextBlock
+                Margin="0,0,0,20"
+                FontSize="24"
+                FontWeight="Bold"
+                Text="TextBlock基本属性" />
+
+            <!--  基本文本显示  -->
+            <GroupBox Padding="10" Header="基本文本显示">
                 <StackPanel>
-                    <TextBlock Text="这是一个简单的TextBlock控件" Margin="0,5"/>
-                    
+                    <TextBlock Margin="0,5" Text="这是一个简单的TextBlock控件" />
+
                     <TextBlock Margin="0,10,0,5" FontWeight="Bold">Text属性设置：</TextBlock>
-                    <TextBlock Text="使用Text属性设置文本内容" Foreground="Blue" Margin="10,0"/>
-                    
+                    <TextBlock
+                        Margin="10,0"
+                        Foreground="Blue"
+                        Text="使用Text属性设置文本内容" />
+
                     <TextBlock Margin="0,10,0,5" FontWeight="Bold">直接在标签之间添加内容：</TextBlock>
                     <TextBlock Margin="10,0">这是直接在TextBlock标签之间添加的文本内容</TextBlock>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- 文本对齐方式 -->
-            <GroupBox Header="文本对齐方式(TextAlignment)" Margin="0,20,0,0" Padding="10">
+
+            <!--  文本对齐方式  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="文本对齐方式(TextAlignment)">
                 <StackPanel>
-                    <TextBlock Text="默认对齐方式(Left)" Margin="0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" HorizontalAlignment="Left">
-                        <TextBlock Text="文本左对齐" Margin="5"/>
+                    <TextBlock Margin="0,5" Text="默认对齐方式(Left)" />
+                    <Border
+                        Width="300"
+                        HorizontalAlignment="Left"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock Margin="5" Text="文本左对齐" />
                     </Border>
-                    
-                    <TextBlock Text="居中对齐(Center)" Margin="0,15,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" HorizontalAlignment="Left">
-                        <TextBlock Text="文本居中对齐" TextAlignment="Center" Margin="5"/>
+
+                    <TextBlock Margin="0,15,0,5" Text="居中对齐(Center)" />
+                    <Border
+                        Width="300"
+                        HorizontalAlignment="Left"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Margin="5"
+                            Text="文本居中对齐"
+                            TextAlignment="Center" />
                     </Border>
-                    
-                    <TextBlock Text="右对齐(Right)" Margin="0,15,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" HorizontalAlignment="Left">
-                        <TextBlock Text="文本右对齐" TextAlignment="Right" Margin="5"/>
+
+                    <TextBlock Margin="0,15,0,5" Text="右对齐(Right)" />
+                    <Border
+                        Width="300"
+                        HorizontalAlignment="Left"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Margin="5"
+                            Text="文本右对齐"
+                            TextAlignment="Right" />
                     </Border>
-                    
-                    <TextBlock Text="两端对齐(Justify)" Margin="0,15,0,5"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" HorizontalAlignment="Left">
-                        <TextBlock TextAlignment="Justify" TextWrapping="Wrap" Margin="5">
+
+                    <TextBlock Margin="0,15,0,5" Text="两端对齐(Justify)" />
+                    <Border
+                        Width="300"
+                        HorizontalAlignment="Left"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Margin="5"
+                            TextAlignment="Justify"
+                            TextWrapping="Wrap">
                             这是两端对齐的文本，长文本会自动调整单词之间的间距，使得每一行的两端都能与容器边缘对齐。这种对齐方式通常用于长段落文本。
                         </TextBlock>
                     </Border>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- 字体相关属性 -->
-            <GroupBox Header="字体相关属性" Margin="0,20,0,0" Padding="10">
+
+            <!--  字体相关属性  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="字体相关属性">
                 <StackPanel>
-                    <TextBlock Text="FontFamily(字体族)" Margin="0,5,0,5" FontWeight="Bold"/>
+                    <TextBlock
+                        Margin="0,5,0,5"
+                        FontWeight="Bold"
+                        Text="FontFamily(字体族)" />
                     <WrapPanel>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="微软雅黑" FontFamily="Microsoft YaHei" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontFamily="Microsoft YaHei"
+                                Text="微软雅黑" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="宋体" FontFamily="SimSun" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontFamily="SimSun"
+                                Text="宋体" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="Times New Roman" FontFamily="Times New Roman" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontFamily="Times New Roman"
+                                Text="Times New Roman" />
                         </Border>
                     </WrapPanel>
-                    
-                    <TextBlock Text="FontSize(字体大小)" Margin="0,15,0,5" FontWeight="Bold"/>
+
+                    <TextBlock
+                        Margin="0,15,0,5"
+                        FontWeight="Bold"
+                        Text="FontSize(字体大小)" />
                     <WrapPanel>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="12像素" FontSize="12" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontSize="12"
+                                Text="12像素" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="16像素" FontSize="16" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontSize="16"
+                                Text="16像素" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="20像素" FontSize="20" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontSize="20"
+                                Text="20像素" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="24像素" FontSize="24" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontSize="24"
+                                Text="24像素" />
                         </Border>
                     </WrapPanel>
-                    
-                    <TextBlock Text="FontWeight(字体粗细)" Margin="0,15,0,5" FontWeight="Bold"/>
+
+                    <TextBlock
+                        Margin="0,15,0,5"
+                        FontWeight="Bold"
+                        Text="FontWeight(字体粗细)" />
                     <WrapPanel>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="正常(Normal)" FontWeight="Normal" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontWeight="Normal"
+                                Text="正常(Normal)" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="粗体(Bold)" FontWeight="Bold" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontWeight="Bold"
+                                Text="粗体(Bold)" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="细体(Light)" FontWeight="Light" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontWeight="Light"
+                                Text="细体(Light)" />
                         </Border>
                     </WrapPanel>
-                    
-                    <TextBlock Text="FontStyle(字体样式)" Margin="0,15,0,5" FontWeight="Bold"/>
+
+                    <TextBlock
+                        Margin="0,15,0,5"
+                        FontWeight="Bold"
+                        Text="FontStyle(字体样式)" />
                     <WrapPanel>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="正常(Normal)" FontStyle="Normal" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontStyle="Normal"
+                                Text="正常(Normal)" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="斜体(Italic)" FontStyle="Italic" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                FontStyle="Italic"
+                                Text="斜体(Italic)" />
                         </Border>
                     </WrapPanel>
                 </StackPanel>
             </GroupBox>
-            
-            <!-- 外观相关属性 -->
-            <GroupBox Header="外观相关属性" Margin="0,20,0,0" Padding="10">
+
+            <!--  外观相关属性  -->
+            <GroupBox
+                Margin="0,20,0,0"
+                Padding="10"
+                Header="外观相关属性">
                 <StackPanel>
-                    <TextBlock Text="Foreground(前景色)" Margin="0,5,0,5" FontWeight="Bold"/>
+                    <TextBlock
+                        Margin="0,5,0,5"
+                        FontWeight="Bold"
+                        Text="Foreground(前景色)" />
                     <WrapPanel>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="红色文本" Foreground="Red" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Foreground="Red"
+                                Text="红色文本" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="蓝色文本" Foreground="Blue" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Foreground="Blue"
+                                Text="蓝色文本" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="绿色文本" Foreground="Green" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Foreground="Green"
+                                Text="绿色文本" />
                         </Border>
                     </WrapPanel>
-                    
-                    <TextBlock Text="Background(背景色)" Margin="0,15,0,5" FontWeight="Bold"/>
+
+                    <TextBlock
+                        Margin="0,15,0,5"
+                        FontWeight="Bold"
+                        Text="Background(背景色)" />
                     <WrapPanel>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="红色背景" Background="LightPink" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Background="LightPink"
+                                Text="红色背景" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="蓝色背景" Background="LightBlue" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Background="LightBlue"
+                                Text="蓝色背景" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="绿色背景" Background="LightGreen" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Background="LightGreen"
+                                Text="绿色背景" />
                         </Border>
                     </WrapPanel>
-                    
-                    <TextBlock Text="TextDecorations(文本装饰)" Margin="0,15,0,5" FontWeight="Bold"/>
+
+                    <TextBlock
+                        Margin="0,15,0,5"
+                        FontWeight="Bold"
+                        Text="TextDecorations(文本装饰)" />
                     <WrapPanel>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="下划线" TextDecorations="Underline" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Text="下划线"
+                                TextDecorations="Underline" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="删除线" TextDecorations="Strikethrough" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Text="删除线"
+                                TextDecorations="Strikethrough" />
                         </Border>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,10">
-                            <TextBlock Text="上划线" TextDecorations="OverLine" Margin="5"/>
+                        <Border
+                            Margin="0,0,10,10"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+                            <TextBlock
+                                Margin="5"
+                                Text="上划线"
+                                TextDecorations="OverLine" />
                         </Border>
                     </WrapPanel>
-                    
-                    <TextBlock Text="LineHeight(行高)" Margin="0,15,0,5" FontWeight="Bold"/>
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" HorizontalAlignment="Left">
-                        <TextBlock TextWrapping="Wrap" Margin="5">
-                            <Run>正常行高的文本</Run><LineBreak/>
-                            <Run>默认行间距的效果</Run><LineBreak/>
+
+                    <TextBlock
+                        Margin="0,15,0,5"
+                        FontWeight="Bold"
+                        Text="LineHeight(行高)" />
+                    <Border
+                        Width="300"
+                        HorizontalAlignment="Left"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock Margin="5" TextWrapping="Wrap">
+                            <Run>正常行高的文本</Run><LineBreak />
+                            <Run>默认行间距的效果</Run><LineBreak />
                             <Run>展示多行文本</Run>
                         </TextBlock>
                     </Border>
-                    
-                    <Border BorderBrush="Gray" BorderThickness="1" Width="300" HorizontalAlignment="Left" Margin="0,10,0,0">
-                        <TextBlock TextWrapping="Wrap" LineHeight="30" Margin="5">
-                            <Run>增加行高的文本</Run><LineBreak/>
-                            <Run>行高设置为30</Run><LineBreak/>
+
+                    <Border
+                        Width="300"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <TextBlock
+                            Margin="5"
+                            LineHeight="30"
+                            TextWrapping="Wrap">
+                            <Run>增加行高的文本</Run><LineBreak />
+                            <Run>行高设置为30</Run><LineBreak />
                             <Run>展示多行文本</Run>
                         </TextBlock>
                     </Border>
