@@ -2,6 +2,8 @@
 
 这是一个基于.NET 8.0的WPF应用程序，用于演示WPF中TextBlock控件的各种功能和用法。该程序提供了一个交互式界面，展示了TextBlock控件的各种属性、格式化选项和高级功能。
 
+![image](https://github.com/user-attachments/assets/7b91c295-717f-4a71-805d-e2e692f8aecb)
+
 ## 功能特点
 
 该演示程序包含以下几个主要部分：
